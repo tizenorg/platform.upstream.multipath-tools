@@ -48,7 +48,7 @@ Authors:
 %setup -q -n multipath-tools-%{version}
 %build
 cd kpartx
-make CC="%__cc" OPTFLAGS="$RPM_OPT_FLAGS" LIB=%_lib
+make CC="%__cc" OPTFLAGS="$RPM_OPT_FLAGS" LIB=%_libdir
 
 %install
 pushd kpartx
@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT;
 %files -n kpartx
 %license COPYING
 %defattr(-,root,root)
-%config /etc/udev/rules.d/kpartx.rules
+%config /usr/lib/udev/rules.d/kpartx.rules
 /sbin/kpartx
 %dir /lib/udev
 /lib/udev/kpartx_id
