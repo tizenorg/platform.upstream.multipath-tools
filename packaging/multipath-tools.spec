@@ -12,6 +12,7 @@ Summary:        Tools to Manage Multipathed Devices with the device-mapper
 License:        BSD-3-Clause ; GPL-2.0+ ; LGPL-2.1+ ; MIT
 Group:          System/Base
 Source:         multipath-tools-%{version}.tar.bz2
+Source1001: 	multipath-tools.manifest
 %description
 This package provides the tools to manage multipathed devices by
 instructing the device-mapper multipath module what to do. The tools
@@ -46,6 +47,7 @@ Authors:
 
 %prep
 %setup -q -n multipath-tools-%{version}
+cp %{SOURCE1001} .
 %build
 cd kpartx
 make CC="%__cc" OPTFLAGS="$RPM_OPT_FLAGS" LIB=%_libdir
@@ -60,9 +62,11 @@ popd
 rm -rf $RPM_BUILD_ROOT;
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 
 %files -n kpartx
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root)
 %config /usr/lib/udev/rules.d/kpartx.rules
