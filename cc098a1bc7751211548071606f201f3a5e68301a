@@ -1,0 +1,8 @@
+Change-Id: Icc098a1bc7751211548071606f201f3a5e68301a
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 09:37:19 -0700
+Reviewed-on: https://review.tizen.org/gerrit/5232
+Project: platform/upstream/multipath-tools
+Branch: refs/heads/tizen
